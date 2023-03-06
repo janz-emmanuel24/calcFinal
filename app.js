@@ -16,7 +16,8 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
+// const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
+const DB = 'mongodb+srv://Janz:LZ4gCWNLK32KGdy@cluster0.kakgevo.mongodb.net/calcStore?retryWrites=true&w=majority';
 
 mongoose.connect(DB, {
   useNewUrlParser: true,
