@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const CalcModel = require('./model/calcModel');
 const calcFunctions = require('./controller/calculations');
+const Logger = require('./logger/mainLogger');
 
 const app = express();
 
@@ -21,7 +22,7 @@ mongoose.connect(DB, {
   useNewUrlParser: true,
 }).then(() => {
   // console.log(con.connections);
-  console.log('DB connection successful');
+  Logger.info('DB connection successful');
 });
 
 // Calculator function
@@ -62,16 +63,6 @@ app.get('/', async (req, res) => {
   res.status(200).render('calc', { result, allHistoryCalcuationsNotCurrent });
 });
 
-app.get('/test-url', (req, res) => {
-  const urlList = {
-    url: 'people.co.uk',
-    published: '2022',
-  };
-  res.status(200).send(urlList);
-});
-
-module.exports = app; // for testing
-
 app.post('/', async (req, res) => {
   const { firstNumber, operator, secondNumber } = req.body;
   result.calcvalue = calculate(firstNumber, operator, secondNumber);
@@ -96,7 +87,7 @@ app.post('/', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
+  Logger.info(`Listening on port ${port}`);
 });
 
 module.exports = app;

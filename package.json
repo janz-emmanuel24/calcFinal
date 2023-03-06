@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "npx mocha -w \"tests/apiTest.js\" --timeout 10000",
+    "test": "npx mocha \"tests/apiTest.js\" --timeout 10000",
     "lint:fix": "eslint --fix ./*.js",
     "start": "nodemon app.js"
   },
@@ -26,6 +26,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^7.0.0",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "winston": "^3.8.2"
   }
 }
