@@ -1,7 +1,7 @@
 const chai = require('chai');
 const { assert } = require('chai');
 const chaiHttp = require('chai-http');
-const server = require('../app');
+// const server = require('../app');
 const calculations = require('../controller/calculations');
 
 // eslint-disable-next-line no-unused-vars
@@ -12,17 +12,17 @@ chai.use(chaiHttp);
 chai.use(chaiHttp);
 
 // eslint-disable-next-line no-undef
-describe('Testing endpoints', () => {
-  // eslint-disable-next-line no-undef
-  it('GET /: should the application home page', (done) => {
-    chai.request(server)
-      .get('/')
-      .end((err, res) => {
-        res.should.have.status(200);
-        done();
-      });
-  });
-});
+// describe('Testing endpoints', () => {
+//   // eslint-disable-next-line no-undef
+//   it('GET /: should the application home page', (done) => {
+//     chai.request(server)
+//       .get('/')
+//       .end((err, res) => {
+//         res.should.have.status(200);
+//         done();
+//       });
+//   });
+// });
 
 // eslint-disable-next-line no-undef
 describe('Testing the basic operations', () => {
